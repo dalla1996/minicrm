@@ -37,12 +37,12 @@ require __DIR__.'/auth.php';
 
 
 Route::get('/company', function () {
-    $data=company::all();
+    $data=company::paginate(10);
 
     return view('company')->with('details',$data);
 });
 Route::get('/employee', function () {
-    $data=employee::all();
+    $data=employee::paginate(10);
     //dd($data);
     return view('employee')->with('details',$data);
 });

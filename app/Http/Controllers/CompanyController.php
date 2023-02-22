@@ -109,7 +109,7 @@ class CompanyController extends Controller
         $data->logo=$request->image;
         $data->save();
 
-        $datacom=company::all();
+        $datacom=company::paginate(10);
         return view('company')->with('details',$datacom);
       
 

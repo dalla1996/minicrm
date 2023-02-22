@@ -111,7 +111,7 @@ class EmployeeController extends Controller
         $data->phone=$request->phone;
         $data->save();
 
-        $empdata=employee::all();
+        $empdata=employee::paginate(10);
         return view('employee')->with('details',$empdata);
     }
 
